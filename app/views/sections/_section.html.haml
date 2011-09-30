@@ -1,0 +1,19 @@
+%h2 Section
+= form_for([@site, section]) do |f|
+  .field
+    = f.label :name 
+    %br
+    = f.text_field :name
+  .actions
+    = f.submit
+
+%p
+  = link_to 'Delete Section', [@site, section],
+    :confirm => 'Are you sure?',
+    :method => :delete
+    
+%h3 Pages
+- @section = section
+%ul#primaryNav
+  = render section.pages
+  = render "pages/form"

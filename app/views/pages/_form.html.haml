@@ -1,0 +1,27 @@
+- options = [['Open', 'open'], ['Started', 'started'], ['Finished', 'finished'], ['Unapplicable', 'unapplicable']]
+%li
+  .wrapper
+    = form_for([@site, @section, @section.pages.build]) do |f| 
+      .field
+        = f.label :name
+        %br
+        = f.text_field :name
+      .field
+        = f.label :path 
+        %br
+        = f.text_field :path 
+      .page_status
+        %span.field.status
+          = f.label "D", :title => :design_status, :class => 'open'
+          = f.select :design_status, options
+        %span.field.status
+          = f.label "C", :title => :content_status, :class => 'open'
+          = f.select :content_status, options
+        %span.field.status
+          = f.label "F", :title => :frontend_status, :class => 'open'
+          = f.select :frontend_status, options
+        %span.field.status
+          = f.label "B", :title => :backend_status, :class => 'open'
+          = f.select :backend_status, options
+      .actions
+        = f.submit 

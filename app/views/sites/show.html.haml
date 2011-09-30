@@ -1,0 +1,20 @@
+%p#notice
+  = notice
+
+%p
+  %b Name:
+  = @site.name
+
+%p
+  %b Url:
+  = @site.url
+
+= render @site.sections
+ 
+%h2
+  Add a section:
+= render "sections/form"
+
+= link_to 'Edit', edit_site_path(@site) 
+|
+= link_to 'Back', sites_path 

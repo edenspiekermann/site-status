@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+/*
+a:link:before,
+a:visited:before {
+        content: " "attr(href)" ";
+        display: block;
+        text-transform: uppercase;
+        font-size: 10px;
+        margin-bottom: 5px;
+        word-wrap: break-word;
+}
+*/
+
+.header {
+  border: 1px solid #c0c0c0;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.header ul, .header .title {
+  display: block;
+  float: left;
+  width: 150px;
+}
+
+.header .title {
+  width: 300px;
+  
+}
+.header ul li {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+.header:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.page_status {
+   overflow: visible;
+}
+
+form .pagesubmit input{
+   display: none;
+}
+
+.page_status .field{
+  display: inline-block;
+  margin-bottom: 0;
+  height: 25px;
+}
+
+.status label{
+  width: 18px;
+  height: 18px;
+  display: block;
+  background-color: #ccc;
+  margin: 0;
+  font-size: 10px;
+  float: left;
+  text-align: center;
+  padding-top: 0;
+     -moz-border-radius: 16px; /* FF1-3.6 */
+  -webkit-border-radius: 16px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+          border-radius: 16px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+  cursor: pointer;
+}
+
+.status select {
+  display: none;
+}
+
+.status .open {
+  background-color: #f23b28;
+}
+.status .started {
+  background-color: #fbce1c;
+}
+.status .finished {
+  background-color: #8cdc1a;
+}
+
+li a {
+  clear: both
+}

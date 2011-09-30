@@ -1,0 +1,5 @@
+rvm ruby-1.9.2-p290@rbma --create
+if ! command -v bundle ; then
+  gem install bundler
+fi
+bundle | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'

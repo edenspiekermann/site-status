@@ -1,0 +1,31 @@
+- options = [['Unapplicable', 'unapplicable'], ['Open', 'open'], ['Started', 'started'], ['Finished', 'finished']]
+%li 
+  .wrapper
+    = form_for([@site, @section, page]) do |f| 
+      .field
+        = f.label :name
+        %br
+        = f.text_field :name
+      .field
+        = f.label :path 
+        %br
+        = f.text_field :path
+      .page_status
+        .field.status
+          = f.label "D", :title => :design_status, :class => page.design_status
+          = f.select :design_status, options
+        .field.status
+          = f.label "C", :title => :content_status, :class => page.content_status
+          = f.select :content_status, options
+        .field.status
+          = f.label "F", :title => :frontend_status, :class => page.frontend_status
+          = f.select :frontend_status, options
+        .field.status
+          = f.label "B", :title => :backend_status, :class => page.backend_status
+          = f.select :backend_status, options
+      .actions.pagesubmit
+        = f.submit 
+    %p
+      =  link_to 'Delete Page', [@site, @section, page],
+        :confirm => 'Are you sure?',
+        :method => :deleteasda
