@@ -48,10 +48,18 @@ a:visited:before {
   display: inline-block;
 }
 
-
 .page_status {
-   overflow: visible;
+  position: relative;
+  text-align: left;
+  top: -20px;
+  margin-bottom: -20px;
 }
+
+ul.nav li ul li ul li .page_status {
+  top: -15px;
+  margin-bottom: -15px;
+}
+
 .actions {
   text-align: left;
 }
@@ -74,7 +82,6 @@ form .pagesubmit input{
 .field {
   text-align: left;
 }
-
 .wrapper label {
   width: 20%;
   display: inline-block;

@@ -1,7 +1,7 @@
 - options = [['Unapplicable', 'unapplicable'], ['Open', 'open'], ['Started', 'started'], ['Finished', 'finished']]
 %li 
   .wrapper
-    = form_for([@site, @section, page]) do |f| 
+    = form_for([@site, @section, page], :remote => true) do |f| 
       .page_status
         .field.status
           = f.label "D", :title => :design_status, :class => page.design_status

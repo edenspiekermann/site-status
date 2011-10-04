@@ -14,6 +14,6 @@
 - @section = section
 - pwp = section.pages.without_parent()
 
-%ul#primaryNav{:class => "col#{pwp.length}"}
+%ul{:class => "col#{pwp.length} nav"}
   = render pwp
   = render "pages/form"
