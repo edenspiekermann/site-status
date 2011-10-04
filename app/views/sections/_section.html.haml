@@ -1,19 +1,16 @@
-%h2 Section
 = form_for([@site, section]) do |f|
   .field
     = f.label :name 
     = f.text_field :name
   .actions
     = f.submit
-    %div.delete
-      = link_to 'Delete Section', [@site, section],
-        :confirm => 'Are you sure?',
-        :method => :delete
-    
-%h3 Pages
+  %button.delete
+    = link_to 'Delete Section', [@site, section],
+      :confirm => 'Are you sure?',
+      :method => :delete
 - @section = section
+= render "pages/form"
 - pwp = section.pages.without_parent()
 
-%ul{:class => "col#{pwp.length} nav"}
+%ul{:class => "col#{pwp.length-1} nav"}
   = render pwp
-  = render "pages/form"

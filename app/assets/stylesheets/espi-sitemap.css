@@ -41,8 +41,21 @@ a:visited:before {
     clear: both;
     visibility: hidden;
 }
+.edit_section .field {
+  display: inline-block;
+}
+.edit_section label {
+  display: inline-block;
+  width: 100px;
+}
+.edit_section .delete,
+.edit_section input,
 .edit_section .actions {
-  height: 4em;
+  display: inline-block;
+  width: 150px;
+}
+.edit_section .field input {
+  width: 144px;
 }
 .delete {
   display: inline-block;
@@ -68,10 +81,6 @@ a:visited:before {
 .noform .path {
   display: none;
 }
-ul.nav li ul li ul li .page_status {
-  top: -15px;
-  margin-bottom: -15px;
-}
 
 .actions {
   text-align: left;
@@ -86,10 +95,27 @@ form .pagesubmit input{
   width: 100%;
 }
 
-.page_status .field {
+.new_page {
+  display: none;
+}
+body .nav {
+  margin-top: 4em;
+}
+
+.new_page .field {
+  display: block;
+}
+.new_page .field label{
+  width: 100px;
+  display: inline-block;
+}
+.wrapper .page_status .field {
   display: inline-block;
   margin-bottom: 0;
   height: 25px;
+}
+.wrapper .page_status .actions input{
+  width: 250px;
 }
 
 .field {
@@ -99,7 +125,7 @@ form .pagesubmit input{
   width: 100%;
 }
 
-.status label{
+.wrapper .status label{
   width: 18px;
   height: 18px;
   display: block;
@@ -115,17 +141,16 @@ form .pagesubmit input{
   cursor: pointer;
 }
 
-.status select {
+.wrapper .status select {
   display: none;
 }
-
-.status .open {
+.wrapper .status .open {
   background-color: #f23b28;
 }
-.status .started {
+.wrapper .status .started {
   background-color: #fbce1c;
 }
-.status .finished {
+.wrapper .status .finished {
   background-color: #8cdc1a;
 }
 

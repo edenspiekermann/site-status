@@ -1,29 +1,26 @@
+%button.new_page_header New Page
 - options = [['Open', 'open'], ['Started', 'started'], ['Finished', 'finished'], ['Unapplicable', 'unapplicable']]
-%li
-  .wrapper
-    = form_for([@site, @section, @section.pages.build]) do |f| 
-      .page_status
-        %span.field.status
-          = f.label "D", :title => :design_status, :class => 'open'
-          = f.select :design_status, options
-        %span.field.status
-          = f.label "C", :title => :content_status, :class => 'open'
-          = f.select :content_status, options
-        %span.field.status
-          = f.label "F", :title => :frontend_status, :class => 'open'
-          = f.select :frontend_status, options
-        %span.field.status
-          = f.label "B", :title => :backend_status, :class => 'open'
-          = f.select :backend_status, options
-      .field
-        = f.label :name
-        = f.text_field :name
-      .field
-        = f.label :path 
-        = f.text_field :path 
-      .field.parent
-        = f.label :parent
-        = f.select :parent_id, [" "] + @section.pages.build.get_possible_parents()
-      .actions
-        .pagesubmit
-          = f.submit "Save"
+= form_for([@site, @section, @section.pages.build]) do |f| 
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :path 
+    = f.text_field :path 
+  %span.field.status
+    = f.label  :design_status, :class => 'open'
+    = f.select :design_status, options
+  %span.field.status
+    = f.label  :content_status, :class => 'open'
+    = f.select :content_status, options
+  %span.field.status
+    = f.label  :frontend_status, :class => 'open'
+    = f.select :frontend_status, options
+  %span.field.status
+    = f.label  :backend_status, :class => 'open'
+    = f.select :backend_status, options
+  .field.parent
+    = f.label :parent
+    = f.select :parent_id, [" "] + @section.pages.build.get_possible_parents()
+  .actions
+    = f.submit "Save"

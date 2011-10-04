@@ -33,5 +33,9 @@ $(function(){
     $(this).parents(".wrapper").first().removeClass("noform");
   });
 
+  $('.new_page_header').click(function() {
+    $(this).next().toggle();
+  });
+
 });
 
