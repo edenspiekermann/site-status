@@ -54,7 +54,20 @@ a:visited:before {
   top: -20px;
   margin-bottom: -20px;
 }
-
+.noform .name input,
+.noform .path input {
+  border: 0;
+  background-color: transparent;
+  height: 1.5em;
+}
+.noform .field {
+  margin-bottom: 0;
+}
+.noform label,
+.noform .parent,
+.noform .actions {
+  display: none;
+}
 ul.nav li ul li ul li .page_status {
   top: -15px;
   margin-bottom: -15px;
@@ -82,13 +95,8 @@ form .pagesubmit input{
 .field {
   text-align: left;
 }
-.wrapper label {
-  width: 20%;
-  display: inline-block;
-}
 .wrapper input {
-  width: 70%;
-  display: inline-block;
+  width: 100%;
 }
 
 .status label{

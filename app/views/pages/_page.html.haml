@@ -1,6 +1,6 @@
 - options = [['Unapplicable', 'unapplicable'], ['Open', 'open'], ['Started', 'started'], ['Finished', 'finished']]
 %li 
-  .wrapper
+  .wrapper.noform
     = form_for([@site, page.section, page], :remote => true) do |f| 
       .page_status
         .field.status
