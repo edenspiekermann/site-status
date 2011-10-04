@@ -38,8 +38,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	width:100% !important;
 }
 
-#primaryNav.col1 li { width:99.9%; }
-#primaryNav.col2 li { width:50.0%; }
+#primaryNav.col1 li,
+#primaryNav.col2 li,
 #primaryNav.col3 li { width:33.3%; }
 #primaryNav.col4 li { width:25.0%; }
 #primaryNav.col5 li { width:20.0%; }
@@ -102,7 +102,6 @@ ol, ul {
 	float: none;
 	background: #ffffff url('/assets/L1-left.png') center bottom no-repeat;
 	position: relative;
-	z-index: 2;
 	padding: 0 0 30px 0;
 }
 #primaryNav li {
@@ -113,7 +112,7 @@ ol, ul {
 }
 #primaryNav li .wrapper {
 	margin: 0 20px 0 0;
-	padding: 10px 0;
+	padding: 10px;
 	display: block;
 	font-size: 11px;
 	font-weight: bold;
@@ -140,66 +139,70 @@ ol, ul {
 
 /* --------	Second Level --------- */
 
-#primaryNav li li {
+#primaryNav li ul li:first-child,
+#primaryNav li ul li {
 	width: 100%;
 	clear: left;
 	margin-top: 0;
 	padding: 10px 0 0 0;
 	background: url('/assets/vertical-line.png') center bottom repeat-y;
 }
-#primaryNav li li .wrapper {
+#primaryNav li ul li .wrapper {
 	background-color: #cee3ac;
 	border-color: #b8da83;
 }
-#primaryNav li li .wrapper:hover {
+#primaryNav li ul li .wrapper:hover {
 	border-color: #94b75f;
 	background-color: #e7f1d7;
 }
-#primaryNav li li:first-child {
+#primaryNav li ul li:first-child {
 	padding-top: 30px;
 }
-#primaryNav li li:last-child {
+#primaryNav li ul li:last-child {
 	background: url('/assets/vertical-line.png') center bottom repeat-y;
 }
-#primaryNav li li a:link:before,
-#primaryNav li li a:visited:before {
+#primaryNav li ul li a:link:before,
+#primaryNav li ul li a:visited:before {
 	color: #8faf5c;
 }
 
 /* --------	Third Level --------- */
 
-#primaryNav li li ul {
-	margin: 10px 0 0 0;
+#primaryNav li ul li ul {
+	margin: 3px 0 0 0;
 	width: 100%;
 	float: right;
 	padding: 9px 0 10px 0;
 	background: #ffffff url('/assets/L3-ul-top.png') center top no-repeat;
 }
-#primaryNav li li li {
+#primaryNav li ul li li {
 	background: url('/assets/L3-center.png') left center no-repeat;
 	padding: 5px 0;
+	display: inline-block;
 }
-#primaryNav li li li .wrapper {
+#primaryNav li ul li li:first-child {
+	padding: 15px 0 5px 0;
+	background: url('/assets/L3-center.png') left center no-repeat;
+	display: inline-block;
+	margin-bottom: -5px;
+}
+#primaryNav li ul li li .wrapper {
 	background-color: #fff7aa;
 	border-color: #e3ca4b;
 	font-size: 10px;
-	padding: 5px 0;
+	padding: 5px;
 	width: 80%;
 	float: right;
 }
-#primaryNav li li li .wrapper:hover {
+#primaryNav li ul li li .wrapper:hover {
 	background-color: #fffce5;
 	border-color: #d1b62c;
 }
-#primaryNav li li li:first-child {
-	padding: 15px 0 5px 0;
-	background: url('/assets/L3-li-top.png') left center no-repeat;
-}
-#primaryNav li li li:last-child {
+#primaryNav li ul li li:last-child {
 	background: url('/assets/L3-bottom.png') left center no-repeat;
 }
-#primaryNav li li li .wrapper:link:before,
-#primaryNav li li li .wrapper:visited:before {
+#primaryNav li ul li li .wrapper:link:before,
+#primaryNav li ul li li .wrapper:visited:before {
 	color: #ccae14;
 	font-size: 9px;
 }

@@ -41,19 +41,47 @@ a:visited:before {
     clear: both;
     visibility: hidden;
 }
+.edit_section .actions {
+  height: 4em;
+}
+.delete {
+  display: inline-block;
+}
+
 
 .page_status {
    overflow: visible;
 }
-
+.actions {
+  text-align: left;
+}
+form button, 
+form .pagesubmit{
+  display: inline-block;
+  width: 49%;
+}
 form .pagesubmit input{
-   display: none;
+   /*display: none;*/
+  width: 100%;
 }
 
-.page_status .field{
+.page_status .field {
   display: inline-block;
   margin-bottom: 0;
   height: 25px;
+}
+
+.field {
+  text-align: left;
+}
+
+.wrapper label {
+  width: 20%;
+  display: inline-block;
+}
+.wrapper input {
+  width: 70%;
+  display: inline-block;
 }
 
 .status label{

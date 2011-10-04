@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930100017) do
+ActiveRecord::Schema.define(:version => 20111004085510) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20110930100017) do
     t.string   "design_status"
     t.string   "frontend_status"
     t.string   "backend_status"
+    t.integer  "parent_id"
+    t.decimal  "order"
   end
 
   add_index "pages", ["section_id"], :name => "index_pages_on_section_id"

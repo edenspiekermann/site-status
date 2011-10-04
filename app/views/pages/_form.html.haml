@@ -2,14 +2,6 @@
 %li
   .wrapper
     = form_for([@site, @section, @section.pages.build]) do |f| 
-      .field
-        = f.label :name
-        %br
-        = f.text_field :name
-      .field
-        = f.label :path 
-        %br
-        = f.text_field :path 
       .page_status
         %span.field.status
           = f.label "D", :title => :design_status, :class => 'open'
@@ -23,5 +15,15 @@
         %span.field.status
           = f.label "B", :title => :backend_status, :class => 'open'
           = f.select :backend_status, options
+      .field
+        = f.label :name
+        = f.text_field :name
+      .field
+        = f.label :path 
+        = f.text_field :path 
+      .field.parent
+        = f.label :parent
+        = f.select :parent_id, [" ", " "] + @section.pages.map { |page| [page.name, page.id]}
       .actions
-        = f.submit 
+        .pagesubmit
+          = f.submit "Save"

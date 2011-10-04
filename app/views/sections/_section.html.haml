@@ -2,18 +2,18 @@
 = form_for([@site, section]) do |f|
   .field
     = f.label :name 
-    %br
     = f.text_field :name
   .actions
     = f.submit
-
-%p
-  = link_to 'Delete Section', [@site, section],
-    :confirm => 'Are you sure?',
-    :method => :delete
+    %div.delete
+      = link_to 'Delete Section', [@site, section],
+        :confirm => 'Are you sure?',
+        :method => :delete
     
 %h3 Pages
 - @section = section
-%ul#primaryNav
-  = render section.pages
+- pwp = section.pages.without_parent()
+
+%ul#primaryNav{:class => "col#{pwp.length}"}
+  = render pwp
   = render "pages/form"
