@@ -23,7 +23,7 @@
         = f.text_field :path
       .field.parent
         = f.label :parent
-        = f.select :parent_id, [" "] + page.section.pages.map { |p| if p.id != page.id then [p.name, p.id] end }
+        = f.select :parent_id, page.get_possible_parents()
       .actions
         .pagesubmit
           = f.submit "Save"
@@ -34,7 +34,7 @@
             :method => :delete,
             :remote => true
   - subpages = Page.by_parent(page.id)
-  -unless subpages.empty?
+  - unless subpages.empty?
     %ul
       - subpages.each do |subpage|
         = render subpage

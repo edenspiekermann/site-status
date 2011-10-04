@@ -54,8 +54,7 @@ a:visited:before {
   top: -20px;
   margin-bottom: -20px;
 }
-.noform .name input,
-.noform .path input {
+.noform .name input{
   border: 0;
   background-color: transparent;
   height: 1.5em;
@@ -65,7 +64,8 @@ a:visited:before {
 }
 .noform label,
 .noform .parent,
-.noform .actions {
+.noform .actions,
+.noform .path {
   display: none;
 }
 ul.nav li ul li ul li .page_status {
