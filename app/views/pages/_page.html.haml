@@ -1,7 +1,7 @@
 - options = [['Unapplicable', 'unapplicable'], ['Open', 'open'], ['Started', 'started'], ['Finished', 'finished']]
 %li 
   .wrapper
-    = form_for([@site, @section, page], :remote => true) do |f| 
+    = form_for([@site, page.section, page], :remote => true) do |f| 
       .page_status
         .field.status
           = f.label "D", :title => :design_status, :class => page.design_status
@@ -28,9 +28,11 @@
         .pagesubmit
           = f.submit "Save"
         %button
-          =  link_to 'Delete', [@site, @section, page],
+          =  link_to 'Delete', [@site, page.section, page],
             :confirm => 'Are you sure?',
-            :method => :delete
+            :class => 'delete_page',
+            :method => :delete,
+            :remote => true
   - subpages = Page.by_parent(page.id)
   -unless subpages.empty?
     %ul
